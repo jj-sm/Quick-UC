@@ -7,15 +7,16 @@ body {
 h2 {
   font-size: 18px;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 button {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;  
   gap: 12px;
   width: 100%;
-  padding: 16px; /* Made button taller */
+  padding: 15px;
   margin: 10px 0;
   font-size: 16px;
   background-color: #007aff;
@@ -33,4 +34,23 @@ button img {
 
 button:hover {
   background-color: #005bb5;
+}
+
+.button-label {
+  flex: 1;
+  text-align: center;
+}
+
+button[data-url="https://ubicate.osuc.dev/"] {
+  background-color: #00366C;
+}
+
+button[data-url="https://ubicate.osuc.dev/"]:hover {
+  background-color: #00254b;
+}
+
+button[data-url="https://portal.uc.cl/"] img {
+  width: 24px;
+  height: 24px;
+  transform: scale(1.5);
 }
