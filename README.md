@@ -14,6 +14,20 @@
 
 ---
 
+## 🚀 Installation
+
+1. **[Download the DMG installer](https://github.com/jj-sm/Quick-UC/releases/latest)**
+2. Open the `.dmg` file and drag `Quick-UC.app` to your `Applications` folder
+3. Enable in Safari
+
+>[!NOTE]
+> You might be prompted with a warning of an unidentified developer this happens because macOS shows this alert due to the following reasons:
+> - The app isn't notarized (you are required to have an $99/year Apple Developer account (I don't))
+> - It's distributed outside the App Store  
+> - 🔒 Your security isn't compromised - [verify the code yourself](https://github.com/jj-sm/Quick-UC)
+
+---
+
 ## 🌐 Featured Services
 One-click access to PUC's essential platforms:
 
@@ -28,15 +42,3 @@ One-click access to PUC's essential platforms:
 | UbiCate | [ubicate.osuc.dev](https://ubicate.osuc.dev/) |
 
 ---
-
-## 🚀 Installation
-
-1. **[Download the DMG installer](https://github.com/jj-sm/Quick-UC/releases/latest)**
-2. Open the `.dmg` file and drag `Quick-UC.app` to your `Applications` folder
-3. Enable in Safari
-
->[!NOTE]
-> You might be prompted with a warning of an unidentified developer this happens because macOS shows this alert due to the following reasons:
-> - The app isn't notarized (you are required to have an $99/year Apple Developer account (I don't))
-> - It's distributed outside the App Store  
-> - 🔒 Your security isn't compromised - [verify the code yourself](https://github.com/jj-sm/Quick-UC)
