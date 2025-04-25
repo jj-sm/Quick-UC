@@ -10,10 +10,13 @@ h2 {
 }
 
 button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   width: 100%;
-  padding: 12px;
-  margin: 8px 0;
+  padding: 16px; /* Made button taller */
+  margin: 10px 0;
   font-size: 16px;
   background-color: #007aff;
   color: white;
@@ -21,6 +24,11 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+}
+
+button img {
+  width: 24px;
+  height: 24px;
 }
 
 button:hover {

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const url = button.getAttribute("data-url");
       if (url) {
-        chrome.tabs.create({ url });
+        window.open(url, "_blank");
       }
     });
   });
