@@ -33,8 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
     button.appendChild(img);
     button.appendChild(span);
 
-    button.addEventListener('click', () => {
-      if (link.url) {
+    button.addEventListener("click", async () => {
+      if (link.auth === "CAS") {
+        const casLoginUrl = `https://sso.uc.cl/cas/login?service=${encodeURIComponent(link.url)}`;
+        browser.tabs.create({ url: link.url }); // Open the original link
+      } else {
+        // Redirect directly for non-CAS links
         browser.tabs.create({ url: link.url });
       }
     });

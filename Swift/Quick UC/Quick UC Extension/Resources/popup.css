@@ -1,12 +1,42 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 16px;
   background-color: #f9f9f9;
 }
 
+/* Example for headings */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin: 8px 0; 
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
 h2 {
+  font-weight: 500;
   font-size: 18px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 8px;
   text-align: center;
 }
 
@@ -182,7 +212,7 @@ body {
 }
 
 #settings-page h1 {
-  color: #000000;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -192,4 +222,110 @@ body {
   text-align: center;
   font-size: 16px; /* Optional: Adjust font size */
   margin: 8px 0; /* Optional: Add spacing */
+}
+
+/* Group box styling */
+.group-box {
+  background-color: #003366; /* Dark blue background */
+  color: white; /* White text for contrast */
+  border: 2px solid #005bb5; /* Slightly lighter blue border */
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px; /* Optional: Limit the width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+}
+
+/* Title inside the group box */
+.group-box h3 {
+  margin: 0 0 15px 0; /* Add spacing below the title */
+  font-size: 18px;
+  color: #ffffff; /* Ensure the title is white */
+}
+
+.group-box h2 {
+  margin: 0 0 15px 0; /* Add spacing below the title */
+  font-size: 24px;
+  color: #ffffff; /* Ensure the title is white */
+}
+
+/* Paragraph group styling */
+.paragraph-group {
+  background-color: #ffffff; /* White background */
+  color: #333; /* Dark text for contrast */
+  border: 2px solid #ccc; /* Light gray border */
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px; /* Optional: Limit the width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
+
+/* Title inside the paragraph group */
+.paragraph-group h3 {
+  margin: 0 0 15px 0; /* Add spacing below the title */
+  font-size: 18px;
+  color: #333; /* Dark text for contrast */
+}
+
+
+
+/* Sticky Header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #003366; /* Dark blue */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure it spans the full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin: 0; /* Reset margin for header only */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.header-title {
+  color: white;
+  flex: 1;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #00254b; /* Slightly darker blue */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0; /* Reset margin for footer only */
+  width: 100%; /* Ensure it spans the full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.footer-logo {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.1);
 }

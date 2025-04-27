@@ -32,7 +32,7 @@ export const links = [
         imgSrc: "images/buttons/labmat-logo.svg",
         imgAlt: "LABMAT Icon",
         label: "LABMAT",
-        auth: "CAS"
+        auth: "LABMAT"
     },
     {
         url: "https://intrawww.ing.puc.cl/siding/acceso/login.phtml?CAS=1",

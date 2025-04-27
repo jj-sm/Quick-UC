@@ -38,8 +38,8 @@
   },
 
   "content_scripts": [{
-      "js": [ "popup.js", "buttons.js" ],
-      "matches": [ "<all_urls>" ]
+      "js": [ "popup.js", "buttons.js", "cas.js"],
+      "matches": [ "<all_urls>", "https://sso.uc.cl/cas/login*" ]
   }],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
