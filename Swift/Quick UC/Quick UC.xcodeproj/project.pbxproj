@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8178E3AE2DBEA7F200EBAD13 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 8178E3AD2DBEA7F200EBAD13 /* src */; };
 		81AC84432DBAF37700C8D835 /* Quick UC Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 81AC84422DBAF37700C8D835 /* Quick UC Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8178E3AD2DBEA7F200EBAD13 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = "Quick UC Extension/Resources/src"; sourceTree = "<group>"; };
 		81AC84102DBAF37500C8D835 /* Quick UC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick UC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AC842C2DBAF37700C8D835 /* Quick UCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quick UCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AC84362DBAF37700C8D835 /* Quick UCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quick UCUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +58,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8178E3922DBE963700EBAD13 /* Exceptions for "Quick UC Extension" folder in "Quick UC" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/_locales,
+				Resources/background.js,
+				Resources/content.js,
+				Resources/images,
+				Resources/manifest.json,
+				"Resources/popup-init.js",
+				Resources/popup.css,
+				Resources/popup.html,
+				Resources/popup.js,
+			);
+			target = 81AC840F2DBAF37500C8D835 /* Quick UC */;
+		};
 		81AC845C2DBAF37700C8D835 /* Exceptions for "Quick UC Extension" folder in "Quick UC Extension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -84,6 +101,7 @@
 		81AC84462DBAF37700C8D835 /* Quick UC Extension */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				8178E3922DBE963700EBAD13 /* Exceptions for "Quick UC Extension" folder in "Quick UC" target */,
 				81AC845C2DBAF37700C8D835 /* Exceptions for "Quick UC Extension" folder in "Quick UC Extension" target */,
 			);
 			explicitFolders = (
@@ -130,6 +148,7 @@
 		81AC84072DBAF37500C8D835 = {
 			isa = PBXGroup;
 			children = (
+				8178E3AD2DBEA7F200EBAD13 /* src */,
 				81AC84122DBAF37500C8D835 /* Quick UC */,
 				81AC842F2DBAF37700C8D835 /* Quick UCTests */,
 				81AC84392DBAF37700C8D835 /* Quick UCUITests */,
@@ -297,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8178E3AE2DBEA7F200EBAD13 /* src in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
