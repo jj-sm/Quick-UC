@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins',Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -16,6 +18,7 @@ body {
   
   header h1 {
     margin: 0;
+    font-weight: 600;
   }
   
   section {
@@ -29,6 +32,7 @@ body {
   
   section h2 {
     color: #4CAF50;
+    font-weight: 500;
   }
   
   table {
@@ -47,11 +51,11 @@ body {
     background: #4CAF50;
     color: white;
   }
-  
+
   footer {
     text-align: center;
     padding: 1rem;
-    background: #333;
+    background: #b8b8b8;
     color: white;
   }
 
@@ -63,13 +67,15 @@ body {
   }
 
   .browser-icon {
-    height: 60px !important; 
+    height: 60px; 
+    max-width: 100%;
   }
 
   .browser-icons-container {
     display: flex;
     justify-content: center; 
     gap: 15px; 
+    min-width: 100px;
     align-items: center; 
     flex-wrap: wrap; 
   }
@@ -77,3 +83,83 @@ body {
   .browser-icons-container .browser-icon {
     height: 60px !important; 
   }
+
+code {
+    background-color: #f4f4f4;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+  
+  pre {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  
+  .note {
+    background-color: #e7f3fe;
+    border-left: 6px solid #2196F3;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .note h3 {
+    margin-top: 0;
+    font-weight: 400;
+  }
+
+link {
+    color: #2196F3;
+    text-decoration: none;
+  }
+  
+  link:hover {
+    text-decoration: underline;
+  }
+  
+  .warning {
+    background-color: #fff3cd;
+    border-left: 6px solid #ffeeba;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .warning h3 {
+    margin-top: 0;
+    font-weight: 400;
+  }
+  
+  @media (max-width: 600px) {
+    section {
+      padding: 1rem;
+      margin: 0.5rem auto;
+    }
+  
+    header, footer {
+      padding: 0.5rem;
+    }
+  
+    table th, table td {
+      font-size: 14px;
+      padding: 4px;
+    }
+  
+    pre {
+      font-size: 14px;
+      padding: 0.5rem;
+    }
+  
+    .browser-icon {
+      height: 40px; 
+    }
+}
+
+h3 {
+  font-weight: 500;
+}
+
+strong {
+  font-weight: 600;
+}
