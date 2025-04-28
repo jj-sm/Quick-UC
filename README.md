@@ -27,7 +27,19 @@ This project is a browser extension that allows users to auto-login into the mos
 ## 🚀 Installation
 
 ### Chrome and Mozilla
-WIP
+<a href="https://chromewebstore.google.com/detail/nbeicnbapmgfgkpijpaafihppjpmicmc?utm_source=item-share-cb">
+  <img src="https://jj-sm.github.io/Quick-UC/imgs/chrome.png" height="60" />
+</a>
+<a href="https://addons.mozilla.org/es-ES/firefox/addon/quick-uc/">
+  <img src="https://jj-sm.github.io/Quick-UC/imgs/firefox.png" height="60" />
+</a>
+<a href="">
+  <img src="https://jj-sm.github.io/Quick-UC/imgs/opera.png" height="60" />
+</a>
+<a href="">
+  <img src="https://jj-sm.github.io/Quick-UC/imgs/edge.png" height="60" />
+</a>
+
 
 ### Safari (macOS only)
 
