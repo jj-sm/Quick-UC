@@ -84,3 +84,20 @@ One-click access to PUC's essential platforms:
 | UbiCate | [ubicate.osuc.dev](https://ubicate.osuc.dev/) |
 
 ---
+
+## Developers
+
+### Contributing
+You're very welcome to contribute. The project relies on three identical directories `Swift`, `ChromeEdgeOpera` and `Mozilla`. They share most of the code but some exceptions when handling local storage (e.g. `broser.*` vs `chrome.*`) or some browser specific methods. Also they have different `manifest.json`.
+
+#### Swift (Safari)
+If you want to contribute to the safari extension you have to keep in mind that you have to use Xcode to compile the app. Then, there's a script to convert it to an image. 
+
+>[!CAUTION]
+>The imports, exports and other relative paths **work** differently in the safari extension. Because the compiler puts "virtually" all files under the same level.
+
+#### Mozilla
+Development process for the mozilla extension is mostly the same but you have to keep in mind that in `manifest.json` it uses `v2` while all the others use `v3`.
+
+#### Chromium based browsers
+Development process is the same for the tree browsers. The only changes can be how you import your extension into your browser but everything keeps being the same.
