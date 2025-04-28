@@ -28,7 +28,7 @@ This project is a browser extension that allows users to auto-login into the mos
 
 ### Non-Safari Browsers
 
->[!DANGER]
+>[!CAUTION]
 >Currently the extension is under revision for the browsers below. (TBD) In the future you will be able to download the extension direclty from the browser.
 >For now, you can go to the latest release and download the `.crx` or `.zip` of the extension.
 
