@@ -16,7 +16,7 @@
 
 ## 🚀 Installation
 
-1. **[Download the DMG installer](https://github.com/jj-sm/Quick-UC/releases/download/v1.1/QuickUCInstaller.dmg)**
+1. **[Download the DMG installer](https://github.com/jj-sm/Quick-UC/releases/download/v1.2/QuickUC-Installer.dmg)**
 2. Open the `.dmg` file and drag `Quick-UC.app` to your `Applications` folder
 3. Enable in Safari
 
