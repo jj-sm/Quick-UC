@@ -1,21 +1,13 @@
 import { links, settingsButton } from './buttons.js';
 
-// const debugDiv = document.createElement('div');
-// debugDiv.style.padding = '10px';
-// debugDiv.style.marginTop = '10px';
-// debugDiv.style.border = '1px solid #ccc';
-// debugDiv.innerHTML = `<p>Links loaded: ${links ? links.length : 'none'}</p>`;
-// document.body.appendChild(debugDiv);
-
 console.log('Imported links:', links);
 console.log('Imported settingsButton:', settingsButton);
 
-
 document.addEventListener("DOMContentLoaded", () => {
-  const selected = JSON.parse(localStorage.getItem('selectedLinks') || "[]");
   const container = document.getElementById('button-container');
 
-  // Filter buttons from localStorage
+  // Filter buttons from localStorage for saved links
+  const selected = JSON.parse(localStorage.getItem('selectedLinks') || "[]");
   links.filter(link => selected.includes(link.label)).forEach(link => {
     const button = document.createElement('button');
     button.className = 'button';
@@ -67,4 +59,46 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   container.appendChild(settingsBtn);
+
+  // Add Auto-Login Toggle Button
+  const toggleButton = document.createElement('button');
+  toggleButton.id = 'toggle-auto-login';
+  toggleButton.style.display = 'flex'; // Use flexbox for centering
+  toggleButton.style.justifyContent = 'center'; // Horizontally center content
+  toggleButton.style.alignItems = 'center'; // Vertically center content
+  toggleButton.style.backgroundColor = 'red';
+  toggleButton.style.color = 'white';
+  toggleButton.style.padding = '10px';
+  toggleButton.style.border = 'none';
+  toggleButton.style.borderRadius = '5px';
+  toggleButton.style.cursor = 'pointer';
+  toggleButton.textContent = 'Auto Login: OFF';
+
+  // Initialize the button state from chrome.storage.local
+  chrome.storage.local.get("autoLoginEnabled", (result) => {
+    const isEnabled = result.autoLoginEnabled ?? true; // Default to true
+    updateButtonState(isEnabled);
+  });
+
+  // Add click event listener to toggle the state
+  toggleButton.addEventListener('click', () => {
+    chrome.storage.local.get("autoLoginEnabled", (result) => {
+      const currentState = result.autoLoginEnabled ?? true;
+      const newState = !currentState;
+
+      // Update the state in chrome.storage.local
+      chrome.storage.local.set({ autoLoginEnabled: newState }, () => {
+        console.log(`Auto Login is now ${newState ? 'ON' : 'OFF'}`);
+        updateButtonState(newState);
+      });
+    });
+  });
+
+  // Update the button's appearance and text
+  function updateButtonState(isEnabled) {
+    toggleButton.style.backgroundColor = isEnabled ? 'green' : 'red';
+    toggleButton.textContent = `Auto Login: ${isEnabled ? 'ON' : 'OFF'}`;
+  }
+
+  container.appendChild(toggleButton);
 });
