@@ -27,6 +27,11 @@ This project is a browser extension that allows users to auto-login into the mos
 ## Installation 🗂️
 
 ### Non-Safari Browsers
+
+>[!DANGER]
+>Currently the extension is under revision for the browsers below. (TBD) In the future you will be able to download the extension direclty from the browser.
+>For now, you can go to the latest release and download the `.crx` or `.zip` of the extension.
+
 <a href="https://chromewebstore.google.com/detail/nbeicnbapmgfgkpijpaafihppjpmicmc?utm_source=item-share-cb">
   <img src="https://jj-sm.github.io/Quick-UC/imgs/chrome.png" height="60" />
 </a>
