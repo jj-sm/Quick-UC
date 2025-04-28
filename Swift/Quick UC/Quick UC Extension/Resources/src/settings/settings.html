@@ -48,6 +48,27 @@
       <button type="button" id="save-cas-info">Save</button>
     </form>
   </div>
+
+  <!-- Group box for LABMAT Login Info -->
+  <div class="group-box">
+    <h2 style="color: white">LABMAT Login Info</h2>
+    <form id="labmat-login-form">
+      <div class="form-group">
+        <label for="labmat-username" style="color: white;">Username:</label>
+        <input type="text" id="labmat-username" name="labmat-username" placeholder="Enter your LabMat username" required>
+        <!-- Add the username checker element -->
+        <p id="labmat-username-checker" style="color: white; display: none;">Checking username...</p>
+      </div>
+      <div class="form-group">
+        <label for="labmat-password" style="color: white;">Password:</label>
+        <div style="position: relative;">
+          <input type="password" id="labmat-password" name="labmat-password" placeholder="Enter your LabMat password" required>
+          <img id="toggle-labmat-password" src="../../images/misc/eye.svg" alt="Toggle Password Visibility" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; width: 24px; height: 24px;">
+        </div>
+      </div>
+      <button type="button" id="save-labmat-info">Save</button>
+    </form>
+  </div>
     
   </main>
 

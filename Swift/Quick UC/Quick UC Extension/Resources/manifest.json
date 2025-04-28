@@ -36,11 +36,12 @@
   "background": {
     "service_worker": "background.js"
   },
-
-  "content_scripts": [{
-      "js": [ "popup.js", "buttons.js", "cas.js"],
-      "matches": [ "<all_urls>", "https://sso.uc.cl/cas/login*" ]
-  }],
+  "content_scripts": [
+    {
+      "js": ["popup.js", "buttons.js", "cas.js", "labmat.js"],
+      "matches": ["<all_urls>", "https://sso.uc.cl/cas/login*", "https://cas-v2.mat.uc.cl/jwt/login?app=labmat-v2"]
+    }
+  ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
   }

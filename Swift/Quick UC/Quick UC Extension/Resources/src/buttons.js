@@ -28,7 +28,7 @@ export const links = [
         auth: "CAS"
     },
     {
-        url: "https://labmat.puc.cl/",
+        url: "https://cas-v2.mat.uc.cl/jwt/login?app=labmat-v2",
         imgSrc: "images/buttons/labmat-logo.svg",
         imgAlt: "LABMAT Icon",
         label: "LABMAT",

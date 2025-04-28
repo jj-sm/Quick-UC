@@ -357,14 +357,30 @@ transform: scale(1.1);
     font-size: 14px;
   }
   
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
+/* Style for form-group inputs */
+.form-group input {
+  width: 100%; /* Make the input take the full width of the form group */
+  padding: 10px; /* Add padding for better spacing */
+  margin-top: 5px; /* Add spacing between the label and input */
+  margin-bottom: 10px; /* Add spacing between the input and the next element */
+  border: 1px solid #ccc; /* Add a light gray border */
+  border-radius: 5px; /* Add rounded corners */
+  background-color: #f5f5f5; /* Set a light gray background */
+  color: #333; /* Set text color */
+  font-size: 16px; /* Set font size */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Add focus styles for inputs */
+.form-group input:focus {
+  outline: none; /* Remove the default blue outline */
+  background-color: #eaeaea; /* Slightly darken the background on focus */
+}
+
+/* Optional: Add hover styles for inputs */
+.form-group input:hover {
+  background-color: #e2e2e2;
+}
   
   button#save-cas-info {
     display: block;
