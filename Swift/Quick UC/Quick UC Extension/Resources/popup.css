@@ -7,7 +7,6 @@ body {
   background-color: #f9f9f9;
 }
 
-/* Example for headings */
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
 }
@@ -125,7 +124,7 @@ button[data-url="https://portal.uc.cl/"] img {
 
 #settings-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Flexible grid: 1 to 3 columns */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
   justify-content: center;
   align-items: center;
@@ -138,7 +137,7 @@ button[data-url="https://portal.uc.cl/"] img {
   align-items: center;
   justify-content: flex-start;
   gap: 12px;
-  width: 100%; /* Full width within the grid cell */
+  width: 100%;
   padding: 15px;
   margin: auto;
   font-size: 16px;
@@ -151,9 +150,9 @@ button[data-url="https://portal.uc.cl/"] img {
 }
 
 .this-button.selected {
-  background-color: #14a865; /* Green background for selected buttons */
-  color: white; /* White text for contrast */
-  border-color: #0c8777; /* Darker green border */
+  background-color: #14a865;
+  color: white;
+  border-color: #0c8777;
 }
 
 .this-button img {
@@ -171,8 +170,8 @@ button[data-url="https://portal.uc.cl/"] img {
 }
 
 #save-button {
-  display: block; /* Ensure the button is treated as a block element */
-  margin: 20px auto; /* Center the button horizontally */
+  display: block;
+  margin: 20px auto;
   padding: 10px 20px;
   font-size: 16px;
   background-color: #007aff;
@@ -182,32 +181,29 @@ button[data-url="https://portal.uc.cl/"] img {
   cursor: pointer;
   transition: background-color 0.2s ease;
   text-align: center;
-  max-width: 500px; /* Match the max-width of #settings-container */
-  width: 100%; /* Ensure it stretches to fill the container */
+  max-width: 500px;
+  width: 100%;
 }
 
 #save-button:hover {
   background-color: #005bb5;
 }
 
-/* Default body style for other pages */
 body {
-  background-color: #f0f4f8; /* Light grayish-blue background */
+  background-color: #f0f4f8;
   color: #333;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
 }
 
-/* Specific style for the settings page */
 #settings-page {
-  background-color: #e6f7ff; /* Light blue background for settings */
-  color: #005a9e; /* Darker blue text for contrast */
+  background-color: #e6f7ff;
+  color: #005a9e;
 }
 
-/* Optional: Style the h2 heading for settings */
 #settings-page h2 {
-  color: #000000; /* Blue heading color */
+  color: #000000;
   text-align: center;
 }
 
@@ -216,65 +212,57 @@ body {
   text-align: center;
 }
 
-/* Center the paragraph text */
 #settings-page p {
   color: #000000;
   text-align: center;
-  font-size: 16px; /* Optional: Adjust font size */
-  margin: 8px 0; /* Optional: Add spacing */
+  font-size: 16px;
+  margin: 8px 0;
 }
 
-/* Group box styling */
 .group-box {
-  background-color: #003366; /* Dark blue background */
-  color: white; /* White text for contrast */
-  border: 2px solid #005bb5; /* Slightly lighter blue border */
+  background-color: #003366;
+  color: white;
+  border: 2px solid #005bb5;
   border-radius: 8px;
   padding: 20px;
   margin: 20px auto;
-  max-width: 600px; /* Optional: Limit the width */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Title inside the group box */
 .group-box h3 {
-  margin: 0 0 15px 0; /* Add spacing below the title */
+  margin: 0 0 15px 0;
   font-size: 18px;
-  color: #ffffff; /* Ensure the title is white */
+  color: #ffffff;
 }
 
 .group-box h2 {
-  margin: 0 0 15px 0; /* Add spacing below the title */
+  margin: 0 0 15px 0;
   font-size: 24px;
-  color: #ffffff; /* Ensure the title is white */
+  color: #ffffff;
 }
 
-/* Paragraph group styling */
 .paragraph-group {
-  background-color: #ffffff; /* White background */
-  color: #333; /* Dark text for contrast */
-  border: 2px solid #ccc; /* Light gray border */
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid #ccc;
   border-radius: 8px;
   padding: 20px;
   margin: 20px auto;
-  max-width: 600px; /* Optional: Limit the width */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Title inside the paragraph group */
 .paragraph-group h3 {
-  margin: 0 0 15px 0; /* Add spacing below the title */
+  margin: 0 0 15px 0;
   font-size: 18px;
-  color: #333; /* Dark text for contrast */
+  color: #333;
 }
 
-
-
-/* Sticky Header */
 .sticky-header {
   position: sticky;
   top: 0;
-  background-color: #003366; /* Dark blue */
+  background-color: #003366;
   color: white;
   padding: 10px 20px;
   display: flex;
@@ -282,9 +270,9 @@ body {
   justify-content: space-between;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ensure it spans the full width */
-  box-sizing: border-box; /* Include padding in width calculation */
-  margin: 0; /* Reset margin for header only */
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .header-content {
@@ -308,13 +296,13 @@ body {
 }
 
 .footer {
-  background-color: #00254b; /* Slightly darker blue */
+  background-color: #00254b;
   color: white;
   text-align: center;
   padding: 10px 0;
-  margin: 0; /* Reset margin for footer only */
-  width: 100%; /* Ensure it spans the full width */
-  box-sizing: border-box; /* Include padding in width calculation */
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-logo {
@@ -328,4 +316,9 @@ body {
 
 .footer-logo:hover {
   transform: scale(1.1);
+}
+
+.phantom-element {
+  margin: 0 80px;
+  height: 0;
 }
