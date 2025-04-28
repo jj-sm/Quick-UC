@@ -26,7 +26,7 @@ This project is a browser extension that allows users to auto-login into the mos
 
 ## Installation 🗂️
 
-### Chrome and Mozilla
+### Non-Safari Browsers
 <a href="https://chromewebstore.google.com/detail/nbeicnbapmgfgkpijpaafihppjpmicmc?utm_source=item-share-cb">
   <img src="https://jj-sm.github.io/Quick-UC/imgs/chrome.png" height="60" />
 </a>
