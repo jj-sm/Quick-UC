@@ -20,7 +20,7 @@ This project is a browser extension that allows users to auto-login into the mos
 
 
 > [!NOTE]
-> Inspired by [directUC](https://github.com/wachunei/directUC) • Done for Safari 
+> Inspired by [directUC](https://github.com/wachunei/directUC) • Updated (for Chromium based browsers) and added support for Safari 
 
 ---
 
