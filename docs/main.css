@@ -65,3 +65,14 @@ body {
   .browser-icon {
     height: 60px !important; 
   }
+
+  .browser-icons-container {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the icons horizontally */
+    gap: 15px; /* Add spacing between the icons */
+    align-items: center; /* Align icons vertically */
+  }
+  
+  .browser-icons-container .browser-icon {
+    height: 60px !important; /* Ensure the height is fixed */
+  }
