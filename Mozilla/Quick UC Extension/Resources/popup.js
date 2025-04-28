@@ -1,4 +1,4 @@
-import { links, settingsButton } from './buttons.js';
+import { links, settingsButton } from './src/buttons.js';
 
 console.log('Imported links:', links);
 console.log('Imported settingsButton:', settingsButton);
@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", async () => {
       if (link.auth === "CAS") {
         const casLoginUrl = `https://sso.uc.cl/cas/login?service=${encodeURIComponent(link.url)}`;
-        browser.tabs.create({ url: link.url }); // Open the original link
+        chrome.tabs.create({ url: link.url }); // Open the original link
       } else {
         // Redirect directly for non-CAS links
-        browser.tabs.create({ url: link.url });
+        chrome.tabs.create({ url: link.url });
       }
     });
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   settingsBtn.appendChild(settingsSpan);
 
   settingsBtn.addEventListener('click', () => {
-    browser.tabs.create({ url: settingsButton.url });
+    chrome.tabs.create({ url: settingsButton.url });
   });
 
   container.appendChild(settingsBtn);
@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize the button state from chrome.storage.local
   chrome.storage.local.get("autoLoginEnabled", (result) => {
     const isEnabled = result.autoLoginEnabled ?? true; // Default to true
+    console.log("Auto Login Enabled:", result.autoLoginEnabled);
     updateButtonState(isEnabled);
   });
 

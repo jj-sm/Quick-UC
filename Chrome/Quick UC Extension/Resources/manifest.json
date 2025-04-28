@@ -3,10 +3,11 @@
   "name": "Quick UC",
   "version": "1.2",
   "description": "Launch frequently used web pages for PUC students",
-  "permissions": ["tabs", "storage"],
+  "permissions": ["activeTab", "storage"],
   "host_permissions": [
     "https://sso.uc.cl/cas/login*",
-    "https://cas-v2.mat.uc.cl/jwt/login?app=labmat-v2"
+    "https://cas-v2.mat.uc.cl/jwt/login?app=labmat-v2",
+    "https://www.labmat.puc.cl/avisos#*"
     ],
   "action": {
     "default_popup": "popup.html",

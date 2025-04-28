@@ -48,6 +48,14 @@
           }
         });
       }
+      console.log("Current URL:", window.location.href);
+
+      if (window.location.href.startsWith("https://www.labmat.puc.cl/avisos")) {
+        console.log("Avisos page detected. Redirecting...");
+        window.location.href = "https://www.labmat.puc.cl/";
+      } else {
+        console.log("Not on the Avisos page. No redirection needed.");
+      }
   
       // Redirect logic after login
       if (window.location.href.includes("https://www.labmat.puc.cl/avisos#")) {

@@ -383,6 +383,23 @@ transform: scale(1.1);
   button#save-cas-info:hover {
     background-color: #005bb5;
   }
+
+  button#save-labmat-info {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button#save-labmat-info:hover {
+    background-color: #005bb5;
+  }
   
   #toggle-password {
     position: absolute;
