@@ -17,7 +17,7 @@ export const links = [
         url: "https://outlook.office.com/mail/",
         imgSrc: "images/buttons/outlook-logo.svg",
         imgAlt: "Correo UC Icon",
-        label: "Correo UC",
+        label: chrome.i18n.getMessage("button_mail_uc"),
         auth: "Microsoft"
     },
     {
@@ -45,7 +45,7 @@ export const links = [
         url: "https://bibliotecas.uc.cl/",
         imgSrc: "images/buttons/biblioteca-logo.svg",
         imgAlt: "Biblioteca Icon",
-        label: "Biblioteca",
+        label: chrome.i18n.getMessage("button_library_uc"),
         auth: "None"
     },
     {
@@ -59,7 +59,7 @@ export const links = [
         url: "https://tarjeta.informatica.uc.cl/",
         imgSrc: "images/buttons/tarjeta-logo.svg",
         imgAlt: "Tarjeta UC Icon",
-        label: "Tarjeta UC",
+        label: "TUC",
         auth: "CAS",
     },
     {

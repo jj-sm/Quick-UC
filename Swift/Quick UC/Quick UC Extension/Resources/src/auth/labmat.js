@@ -35,11 +35,11 @@
             console.log("Submitting the LabMat login form...");
             if (submitButton) {
               console.log("Clicking the submit button...");
-              submitButton.click(); // Simulate a button click
+              submitButton.click();
             } else {
               console.log("Forcing form submission...");
-              loginForm.onsubmit = null; // Disable any onsubmit event listeners
-              loginForm.submit(); // Force form submission
+              loginForm.onsubmit = null; 
+              loginForm.submit(); 
             }
           } else {
             if (!emailField) console.warn("Email field not found.");
@@ -58,7 +58,7 @@
       // Handle blank page with error message
       if (document.body.innerText.includes('{"error":"Method is invalid.","success":0,"successText":"error"}')) {
         console.error("Blank page detected with error message.");
-        alert("An error occurred during login. Please try again.");
+        alert(chrome.i18n.getMessage("alert_common"));
         window.location.href = "https://cas-v2.mat.uc.cl/jwt/login?app=labmat-v2"; // Redirect back to the login page
       }
     });

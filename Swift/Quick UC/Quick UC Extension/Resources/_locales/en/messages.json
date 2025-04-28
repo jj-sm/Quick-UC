@@ -1,10 +1,104 @@
-{
-    "extension_name": {
-        "message": "Quick UC Extension",
-        "description": "Quick UC Extension"
+{   
+    "button_mail_uc": {
+        "message": "Mail UC"
     },
-    "extension_description": {
-        "message": "This extension offers the ease to open frequently used web pages for PUC students",
-        "description": "This extension offers the ease to open frequently used web pages for PUC students"
+    "button_library_uc": {
+        "message": "Library"
+    },
+    "button_tuc": {
+        "message": "TUC"
+    },
+    "button_settings": {
+        "message": "Settings"
+    },
+    "settings_preferences_saved": {
+        "message": "Preferences saved successfully!"
+    },
+    "settings_title": {
+      "message": "Quick UC - Settings"
+    },
+    "settings_header": {
+      "message": "Settings"
+    },
+    "welcome_message_h": {
+      "message": "Welcome!"
+    },
+    "welcome_message": {
+        "message": "The settings page allows you to customize your services, buttons, and login options."
+      },
+    "services_section_title": {
+      "message": "Services"
+    },
+    "cas_login_info_title": {
+      "message": "CAS Login Information"
+    },
+    "labmat_login_info_title": {
+      "message": "LABMAT Login Information"
+    },
+    "username_label": {
+      "message": "Username:"
+    },
+    "password_label": {
+      "message": "Password:"
+    },
+    "save_button": {
+      "message": "Save"
+    },
+    "invalid_username_message": {
+      "message": "Invalid username: Only UC usernames are allowed. (e.g., manuech2m)"
+    },
+    "valid_username_message": {
+      "message": "Valid username :)"
+    },
+    "invalid_labmat_username_message": {
+      "message": "Invalid username: Must be an email ending in uc.cl"
+    },
+    "valid_labmat_username_message": {
+      "message": "Valid username!"
+    },
+    "password_issue_message": {
+      "message": "It seems your password might be incorrect. Please update it in the settings."
+    },
+    "go_to_settings": {
+      "message": "Go to Settings"
+    },
+    "cas_issue_1": {
+        "message": "Please fill in both fields"
+    },
+    "cas_issue_2": {
+        "message": "Please enter a valid username"
+    },
+    "cas_alert": {
+        "message": "CAS Login Info saved successfully!"
+    },
+    "lm_issue_2": {
+        "message": "Please enter a valid LabMat username."
+    },
+    "lm_alert": {
+        "message": "LabMat Login Info saved successfully!"
+    },
+    "close_button": {
+      "message": "Close"
+    },
+    "footer_text": {
+      "message": "Made by: jj-sm"
+    },
+    "alert_common": {
+        "message": "An error occurred during login. Please try again."
+    },
+    "labmat_password_placeholder": {
+    "message": "Enter your LabMat password"
+    },
+    "labmat_username_placeholder": {
+        "message": "Enter your LabMat username"
+    },
+    "cas_username_placeholder": {
+        "message": "Enter your CAS username"
+    },
+    "cas_password_placeholder": {
+        "message": "Enter your CAS password"
+    },
+    "incorrect_password": {
+        "message": "It seems your password might be incorrect. Please update it in the settings."
     }
-}
+  }

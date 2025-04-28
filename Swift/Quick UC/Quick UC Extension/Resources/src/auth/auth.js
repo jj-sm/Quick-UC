@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function validateCASUsername(username) {
     if (username.includes("@uc.cl") || username.includes("uc.cl") || username.includes("@") ) {
       usernameChecker.style.display = "block";
-      usernameChecker.textContent = "Invalid username: Only UC username is allowed. (manuech2m)";
+      usernameChecker.textContent = chrome.i18n.getMessage("invalid_username_message");
       usernameChecker.style.color = "red";
       return false;
     }
     usernameChecker.style.display = "block";
-    usernameChecker.textContent = "Username is valid!";
+    usernameChecker.textContent = chrome.i18n.getMessage("valid_username_message");
     usernameChecker.style.color = "lightgreen";
     return true;
   }
@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
   
     if (!isValid) {
       labmatUsernameChecker.style.display = "block";
-      labmatUsernameChecker.textContent = "Invalid username: Must be an email ending with .uc.cl";
+      labmatUsernameChecker.textContent = chrome.i18n.getMessage("invalid_labmat_username_message");
       labmatUsernameChecker.style.color = "red";
       return false;
     }
   
     labmatUsernameChecker.style.display = "block";
-    labmatUsernameChecker.textContent = "Username is valid!";
+    labmatUsernameChecker.textContent = chrome.i18n.getMessage("valid_username_message");
     labmatUsernameChecker.style.color = "lightgreen";
     return true;
   }
@@ -52,10 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
   togglePasswordButton.addEventListener("click", () => {
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
-      togglePasswordButton.src = "../../images/misc/eye-off.svg"; // Switch to "eye-off" icon
+      togglePasswordButton.src = "../../images/misc/eye-off.svg";
     } else {
       passwordInput.type = "password";
-      togglePasswordButton.src = "../../images/misc/eye.svg"; // Switch to "eye" icon
+      togglePasswordButton.src = "../../images/misc/eye.svg"; 
     }
   });
 
@@ -65,19 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value;
 
     if (!username || !password) {
-      alert("Please fill in both fields.");
+      alert(chrome.i18n.getMessage("cas_issue_1"));
       return;
     }
 
     if (!validateCASUsername(username)) {
-      alert("Please enter a valid username.");
+      alert(chrome.i18n.getMessage("cas_issue_2"));
       return;
     }
 
     // Save credentials to chrome.storage.local
     chrome.storage.local.set({ casLoginInfo: { username, password } }, () => {
       console.log("CAS Login Info saved to chrome.storage.local.");
-      alert("CAS Login Info saved successfully!");
+      alert(chrome.i18n.getMessage("cas_alert"));
     });
   });
 
@@ -98,19 +98,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("labmat-password").value;
 
     if (!username || !password) {
-      alert("Please fill in both fields.");
+      alert(chrome.i18n.getMessage("cas_issue_1"));
       return;
     }
 
     if (!validateLabMatUsername(username)) {
-      alert("Please enter a valid LabMat username.");
+      alert(chrome.i18n.getMessage("lm_issue_2"));
       return;
     }
 
     // Save credentials to chrome.storage.local
     chrome.storage.local.set({ labmatLoginInfo: { username, password } }, () => {
       console.log("LabMat Login Info saved to chrome.storage.local.");
-      alert("LabMat Login Info saved successfully!");
+      alert(chrome.i18n.getMessage("lm_alert"));
     });
   });
 });

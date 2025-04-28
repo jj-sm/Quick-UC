@@ -1,0 +1,104 @@
+{
+    "button_mail_uc": {
+        "message": "Correo UC"
+    },
+    "button_library_uc": {
+        "message": "Biblioteca"
+    },
+    "button_tuc": {
+        "message": "TUC"
+    },
+    "button_settings": {
+        "message": "Config"
+    },
+    "settings_preferences_saved": {
+        "message": "¡Preferencias guardadas con éxito!"
+    },
+    "settings_title": {
+        "message": "Quick UC - Configuración"
+    },
+    "settings_header": {
+        "message": "Configuración"
+    },
+    "welcome_message_h": {
+        "message": "¡Bienvenido!"
+    },
+    "welcome_message": {
+        "message": "La página de configuración te permite personalizar tus servicios, botones y opciones de inicio de sesión."
+    },
+    "services_section_title": {
+        "message": "Servicios"
+    },
+    "cas_login_info_title": {
+        "message": "Información de inicio de sesión CAS"
+    },
+    "labmat_login_info_title": {
+        "message": "Información de inicio de sesión LABMAT"
+    },
+    "username_label": {
+        "message": "Usuario:"
+    },
+    "password_label": {
+        "message": "Contraseña:"
+    },
+    "save_button": {
+        "message": "Guardar"
+    },
+    "invalid_username_message": {
+        "message": "Usuario inválido: Solo se permiten nombres de usuario UC. (por ejemplo, manuech2m)"
+    },
+    "valid_username_message": {
+        "message": "¡Usuario válido!"
+    },
+    "invalid_labmat_username_message": {
+        "message": "Usuario inválido: Debe ser un correo que termine en .uc.cl"
+    },
+    "valid_labmat_username_message": {
+        "message": "¡Usuario válido!"
+    },
+    "password_issue_message": {
+        "message": "Parece que tu contraseña podría ser incorrecta. Por favor, actualízala en la configuración."
+    },
+    "go_to_settings": {
+        "message": "Ir a Configuración"
+    },
+    "cas_issue_1": {
+        "message": "Por favor, completa ambos campos"
+    },
+    "cas_issue_2": {
+        "message": "Por favor, ingresa un nombre de usuario válido"
+    },
+    "cas_alert": {
+        "message": "¡Información de inicio de sesión CAS guardada con éxito!"
+    },
+    "lm_issue_2": {
+        "message": "Por favor, ingresa un nombre de usuario válido para LabMat."
+    },
+    "lm_alert": {
+        "message": "¡Información de inicio de sesión LabMat guardada con éxito!"
+    },
+    "close_button": {
+        "message": "Cerrar"
+    },
+    "footer_text": {
+        "message": "Hecho por: jj-sm"
+    },
+    "alert_common": {
+        "message": "Ocurrió un error durante el inicio de sesión. Por favor, inténtalo de nuevo."
+    },
+    "labmat_password_placeholder": {
+        "message": "Ingresa tu contraseña de LabMat"
+    },
+    "labmat_username_placeholder": {
+        "message": "Ingresa tu usuario de LabMat"
+    },
+    "cas_username_placeholder": {
+        "message": "Ingresa tu usuario CAS"
+    },
+    "cas_password_placeholder": {
+        "message": "Ingresa tu contraseña CAS"
+    },
+    "incorrect_password": {
+        "message": "Parece que tu contraseña podría ser incorrecta. Por favor, actualízala en la configuración."
+    }
+}

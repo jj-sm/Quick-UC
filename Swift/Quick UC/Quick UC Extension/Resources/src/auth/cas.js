@@ -71,11 +71,11 @@
     popup.style.textAlign = 'center';
 
     const message = document.createElement('p');
-    message.textContent = "It seems your password might be incorrect. Please update it in the settings.";
+    message.textContent = chrome.i18n.getMessage("incorrect_password");
 
     const link = document.createElement('a');
     link.href = chrome.runtime.getURL('settings.html');
-    link.textContent = "Go to Settings";
+    link.textContent = chrome.i18n.getMessage("go_to_settings");
     link.style.display = 'block';
     link.style.marginTop = '10px';
     link.style.color = '#007bff';

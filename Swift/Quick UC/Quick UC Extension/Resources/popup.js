@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", async () => {
       if (link.auth === "CAS") {
         const casLoginUrl = `https://sso.uc.cl/cas/login?service=${encodeURIComponent(link.url)}`;
-        browser.tabs.create({ url: link.url }); // Open the original link
+        browser.tabs.create({ url: link.url }); // Opens original link
       } else {
-        // Redirect directly for non-CAS links
+        // Redirect 
         browser.tabs.create({ url: link.url });
       }
     });
@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add Auto-Login Toggle Button
   const toggleButton = document.createElement('button');
   toggleButton.id = 'toggle-auto-login';
-  toggleButton.style.display = 'flex'; // Use flexbox for centering
-  toggleButton.style.justifyContent = 'center'; // Horizontally center content
-  toggleButton.style.alignItems = 'center'; // Vertically center content
+  toggleButton.style.display = 'flex'; 
+  toggleButton.style.justifyContent = 'center';
+  toggleButton.style.alignItems = 'center'; 
   toggleButton.style.backgroundColor = 'red';
   toggleButton.style.color = 'white';
   toggleButton.style.padding = '10px';
@@ -76,11 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize the button state from chrome.storage.local
   chrome.storage.local.get("autoLoginEnabled", (result) => {
-    const isEnabled = result.autoLoginEnabled ?? true; // Default to true
+    const isEnabled = result.autoLoginEnabled ?? true; // init true
     updateButtonState(isEnabled);
   });
 
-  // Add click event listener to toggle the state
+  // Add click event listener for the state
   toggleButton.addEventListener('click', () => {
     chrome.storage.local.get("autoLoginEnabled", (result) => {
       const currentState = result.autoLoginEnabled ?? true;
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Update the button's appearance and text
+  // update button
   function updateButtonState(isEnabled) {
     toggleButton.style.backgroundColor = isEnabled ? 'green' : 'red';
     toggleButton.textContent = `Auto Login: ${isEnabled ? 'ON' : 'OFF'}`;
