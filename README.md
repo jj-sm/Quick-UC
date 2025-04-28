@@ -1,10 +1,10 @@
-# Quick-UC 🎓
+# Quick-UC 
 **Safari Extension for Pontificia Universidad Católica de Chile (PUC) Students**
 
 This project is a browser extension that allows users to auto-login into the most frequent websites used by students at the University.
 
 >[!CAUTION]
->**Privacy**
+>**Privacy** 🔐
 >
 >_(See below, section: How to use?)_
 >
@@ -13,7 +13,7 @@ This project is a browser extension that allows users to auto-login into the mos
 
 
 <p align="center">
-  <img width="223" alt="macOS Security Warning" src="https://github.com/user-attachments/assets/d5b7e816-13fb-41ec-88ca-4f38e19ce159">
+  <img height="400" alt="Landing Banner" src="https://jj-sm.github.io/Quick-UC/brand/landing-1.png">
 </p>
 
 \* _Project not affiliated with the university._
@@ -24,7 +24,7 @@ This project is a browser extension that allows users to auto-login into the mos
 
 ---
 
-## 🚀 Installation
+## Installation 🗂️
 
 ### Chrome and Mozilla
 <a href="https://chromewebstore.google.com/detail/nbeicnbapmgfgkpijpaafihppjpmicmc?utm_source=item-share-cb">
@@ -41,7 +41,7 @@ This project is a browser extension that allows users to auto-login into the mos
 </a>
 
 
-### Safari (macOS only)
+### Safari (macOS only) 🍎
 
 1. **[Download the DMG installer](https://github.com/jj-sm/Quick-UC/releases/download/v1.2/QuickUC-Installer.dmg)**
 2. Open the `.dmg` file and drag `Quick-UC.app` to your `Applications` folder
@@ -60,7 +60,7 @@ You have the posibility to customize the layout of your Quick UC shorcuts. Head 
 
 Also you can select which services you want to display.
 <p align="center">
-<img width="516" alt="Settings Picture" src="https://github.com/user-attachments/assets/33691f2d-15a7-4bb3-bc75-21725009cc46" />
+<img height="500" alt="Settings Picture" src="https://jj-sm.github.io/Quick-UC/brand/landing-2.png" />
 </p>
 
 >[!CAUTION]
@@ -69,7 +69,7 @@ Also you can select which services you want to display.
 >2. Scroll down to auto-login toggle
 >3. Set it to ON or OFF depending your case
 
-## 🌐 Featured Services
+## Featured Services ⚙️
 One-click access to PUC's essential platforms:
 
 | Service | URL |
