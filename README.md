@@ -30,8 +30,12 @@ This project is a browser extension that allows users to auto-login into the mos
 
 >[!CAUTION]
 >Currently the extension is under revision for the browsers below. (TBD) In the future you will be able to download the extension direclty from the browser.
->For now, you can go to the latest release and download the `.crx` or `.zip` of the extension.
+>For now, you can go to the latest release and download the `.crx` or `.zip` of the extension, depending on your browser you will have to follow different installation instructions.
+>**For Chromium Browsers** (includes: Edge, Opera & Chrome) Go to your extensions menu, enable developer mode and load from file (decompressed .zip file)
+>**For Mozilla** Go to [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox) and on the _Load Temporary Extension_ menu select the `manifest.json` of the uncompressed `.zip` file.
 
+
+<!--
 <a href="https://chromewebstore.google.com/detail/nbeicnbapmgfgkpijpaafihppjpmicmc?utm_source=item-share-cb">
   <img src="https://jj-sm.github.io/Quick-UC/imgs/chrome.png" height="60" />
 </a>
@@ -44,6 +48,7 @@ This project is a browser extension that allows users to auto-login into the mos
 <a href="">
   <img src="https://jj-sm.github.io/Quick-UC/imgs/edge.png" height="60" />
 </a>
+-->
 
 
 ### Safari (macOS only) 🍎
