@@ -36,7 +36,7 @@ This project is a browser extension that allows users to auto-login into the mos
 >
 >- Download [here (Chromium)](https://github.com/jj-sm/Quick-UC/releases/download/v1.2.1/Quick-UC-Chromium.zip)
 >
->**For Mozilla** Go to [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox) and on the _Load Temporary Extension_ menu select the `manifest.json` of the uncompressed `.zip` file.
+>**For Mozilla** Go to `about:debugging#/runtime/this-firefox` and on the _Load Temporary Extension_ menu select the `manifest.json` of the uncompressed `.zip` file.
 >- Download [here (Chromium)](https://github.com/jj-sm/Quick-UC/releases/download/v1.2.1/Quick-UC-Mozilla.zip)
 
 
