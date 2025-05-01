@@ -39,6 +39,9 @@ This project is a browser extension that allows users to auto-login into the mos
 >**For Mozilla** Go to `about:debugging#/runtime/this-firefox` and on the _Load Temporary Extension_ menu select the `manifest.json` of the uncompressed `.zip` file.
 >- Download [here (Chromium)](https://github.com/jj-sm/Quick-UC/releases/download/v1.2.1/Quick-UC-Mozilla.zip)
 
+#### Download Directly from Browser
+
+For now, it's only available directly from the following browsers: Edge
 
 <!--
 <a href="https://chromewebstore.google.com/detail/nbeicnbapmgfgkpijpaafihppjpmicmc?utm_source=item-share-cb">
@@ -50,10 +53,11 @@ This project is a browser extension that allows users to auto-login into the mos
 <a href="">
   <img src="https://jj-sm.github.io/Quick-UC/imgs/opera.png" height="60" />
 </a>
-<a href="">
+-->
+<a href="https://microsoftedge.microsoft.com/addons/detail/quick-uc/dcphabneaammdmlikphgcokcolgnenjp">
   <img src="https://jj-sm.github.io/Quick-UC/imgs/edge.png" height="60" />
 </a>
--->
+
 
 
 ### Safari (macOS only) 🍎
