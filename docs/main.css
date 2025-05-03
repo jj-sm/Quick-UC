@@ -10,7 +10,7 @@ body {
   }
   
   header {
-    background: #4CAF50;
+    background: #2448d9;
     color: white;
     padding: 1rem 2rem;
     text-align: center;
@@ -31,7 +31,7 @@ body {
   }
   
   section h2 {
-    color: #4CAF50;
+    color: #3232d5;
     font-weight: 500;
   }
   
@@ -48,15 +48,20 @@ body {
   }
   
   table th {
-    background: #4CAF50;
+    background: #3232d5;
     color: white;
   }
 
   footer {
     text-align: center;
     padding: 1rem;
-    background: #b8b8b8;
+    background: #080043;
     color: white;
+  }
+
+  footer a {
+    color: #00fff2;
+    text-decoration: underline;
   }
 
   img {
@@ -162,4 +167,30 @@ h3 {
 
 strong {
   font-weight: 600;
+}
+
+/* Note Blocks */
+.note {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.note strong {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: large;
+}
+
+.warning {
+  background-color: #fff3cd;
+  border-left: 6px solid #ff9d00;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.warning strong {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: large;
 }
