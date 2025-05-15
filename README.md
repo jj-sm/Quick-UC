@@ -1,4 +1,4 @@
-# Quick-UC 
+# Quick-UC-Web
 **Browser Extension for Pontificia Universidad Católica de Chile (PUC) Students**
 
 This project is a browser extension that allows users to auto-login into the most frequent websites used by students at the University.
