@@ -63,6 +63,7 @@
 			membershipExceptions = (
 				Resources/_locales,
 				Resources/background.js,
+				Resources/buscacursos.js,
 				Resources/content.js,
 				Resources/images,
 				Resources/manifest.json,
@@ -599,7 +600,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -638,7 +639,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,

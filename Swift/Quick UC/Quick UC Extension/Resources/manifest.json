@@ -1,10 +1,19 @@
 {
   "manifest_version": 3,
   "name": "Quick UC",
-  "version": "1.2",
+  "version": "2.0",
   "description": "Launch frequently used web pages for PUC students",
-  "permissions": ["tabs", "<all_urls>"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://buscacursos.uc.cl/*",
+    "*://sso.uc.cl/*",
+    "*://cas-v2.mat.uc.cl/*"
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -22,27 +31,22 @@
   },
   "web_accessible_resources": [
     {
-      "resources": [
-        "images/*",
-        "src/*",
-        "popup.html",
-        "popup.css",
-        "popup.js",
-        "buttons.js"
-      ],
+      "resources": ["images/*"],
       "matches": ["<all_urls>"]
     }
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "content_scripts": [
     {
-      "js": ["popup.js", "buttons.js", "cas.js", "labmat.js"],
-      "matches": ["<all_urls>", "https://sso.uc.cl/cas/login*", "https://cas-v2.mat.uc.cl/jwt/login?app=labmat-v2"]
+      "matches": ["*://buscacursos.uc.cl/*"],
+      "js": ["buscacursos.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://sso.uc.cl/cas/login*",
+        "*://cas-v2.mat.uc.cl/jwt/login*"
+      ],
+      "js": ["cas.js", "labmat.js"]
     }
-  ],
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self';"
-  }
+  ]
 }

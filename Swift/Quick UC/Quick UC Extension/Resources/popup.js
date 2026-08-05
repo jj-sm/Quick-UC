@@ -1,12 +1,41 @@
-import { links, settingsButton } from './buttons.js';
+import { links, settingsButton, calendarButton } from './buttons.js';
 
-console.log('Imported links:', links);
-console.log('Imported settingsButton:', settingsButton);
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById('button-container');
 
-  // Filter buttons from localStorage for saved links
+  // Get current tab
+  const tabs = await browser.tabs.query({ active: true, currentWindow: true });
+  const tab = tabs[0];
+
+  // Add Calendar button if on BuscaCursos
+  if (tab && tab.url && tab.url.includes("buscacursos.uc.cl")) {
+    const calendarBtn = document.createElement('button');
+    calendarBtn.id = 'calendar-button';
+    calendarBtn.className = 'button'; // use same style as quick links
+
+    const img = document.createElement('img');
+    img.src = calendarButton.imgSrc;
+    img.alt = calendarButton.imgAlt;
+
+    const span = document.createElement('span');
+    span.className = 'button-label';
+    span.textContent = calendarButton.label;
+
+    calendarBtn.appendChild(img);
+    calendarBtn.appendChild(span);
+
+    calendarBtn.addEventListener('click', async () => {
+      try {
+        await browser.tabs.sendMessage(tab.id, { action: "fetchCalendar" });
+      } catch (error) {
+        console.error("Error sending message:", error);
+      }
+    });
+
+    container.insertBefore(calendarBtn, container.firstChild);
+  }
+
+  // Load selected quick links
   const selected = JSON.parse(localStorage.getItem('selectedLinks') || "[]");
   links.filter(link => selected.includes(link.label)).forEach(link => {
     const button = document.createElement('button');
@@ -25,12 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
     button.appendChild(img);
     button.appendChild(span);
 
-    button.addEventListener("click", async () => {
+    button.addEventListener("click", () => {
       if (link.auth === "CAS") {
         const casLoginUrl = `https://sso.uc.cl/cas/login?service=${encodeURIComponent(link.url)}`;
-        browser.tabs.create({ url: link.url }); // Open the original link
+        browser.tabs.create({ url: link.url });
       } else {
-        // Redirect directly for non-CAS links
         browser.tabs.create({ url: link.url });
       }
     });
@@ -63,38 +91,34 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add Auto-Login Toggle Button
   const toggleButton = document.createElement('button');
   toggleButton.id = 'toggle-auto-login';
-  toggleButton.style.display = 'flex'; // Use flexbox for centering
-  toggleButton.style.justifyContent = 'center'; // Horizontally center content
-  toggleButton.style.alignItems = 'center'; // Vertically center content
+  toggleButton.style.display = 'flex';
+  toggleButton.style.justifyContent = 'center';
+  toggleButton.style.alignItems = 'center';
   toggleButton.style.backgroundColor = 'red';
   toggleButton.style.color = 'white';
-  toggleButton.style.padding = '10px';
+  toggleButton.style.padding = '20px';
   toggleButton.style.border = 'none';
   toggleButton.style.borderRadius = '5px';
   toggleButton.style.cursor = 'pointer';
   toggleButton.textContent = 'Auto Login: OFF';
 
-  // Initialize the button state from chrome.storage.local
-  chrome.storage.local.get("autoLoginEnabled", (result) => {
-    const isEnabled = result.autoLoginEnabled ?? true; // Default to true
+  browser.storage.local.get("autoLoginEnabled", (result) => {
+    const isEnabled = result.autoLoginEnabled !== undefined ? result.autoLoginEnabled : true;
     updateButtonState(isEnabled);
   });
 
-  // Add click event listener to toggle the state
   toggleButton.addEventListener('click', () => {
-    chrome.storage.local.get("autoLoginEnabled", (result) => {
-      const currentState = result.autoLoginEnabled ?? true;
+    browser.storage.local.get("autoLoginEnabled", (result) => {
+      const currentState = result.autoLoginEnabled !== undefined ? result.autoLoginEnabled : true;
       const newState = !currentState;
 
-      // Update the state in chrome.storage.local
-      chrome.storage.local.set({ autoLoginEnabled: newState }, () => {
+      browser.storage.local.set({ autoLoginEnabled: newState }, () => {
         console.log(`Auto Login is now ${newState ? 'ON' : 'OFF'}`);
         updateButtonState(newState);
       });
     });
   });
 
-  // Update the button's appearance and text
   function updateButtonState(isEnabled) {
     toggleButton.style.backgroundColor = isEnabled ? 'green' : 'red';
     toggleButton.textContent = `Auto Login: ${isEnabled ? 'ON' : 'OFF'}`;

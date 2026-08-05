@@ -78,3 +78,9 @@ export const settingsButton = {
     imgAlt: "Settings Icon",
     label: "Settings"
 };
+
+export const calendarButton = {
+    imgSrc: "images/buttons/calendar-export.svg",
+    imgAlt: "Calendar Icon",
+    label: "Calendario"
+};

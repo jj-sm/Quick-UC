@@ -189,6 +189,15 @@ button[data-url="https://portal.uc.cl/"] img {
   background-color: #005bb5;
 }
 
+#calendar-button {
+  background-color: #FFD700;
+}
+
+#calendar-button:hover {
+  background-color: #e6c200;
+}
+
+
 body {
   background-color: #f0f4f8;
   color: #333;
