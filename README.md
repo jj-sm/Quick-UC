@@ -115,6 +115,15 @@ If you want to contribute to the safari extension you have to keep in mind that 
 >[!CAUTION]
 >The imports, exports and other relative paths **work** differently in the safari extension. Because the compiler puts "virtually" all files under the same level.
 
+#### Release exports
+Use the release helper to stamp a version and export every browser build into `dist/`:
+
+```bash
+python3 scripts/export_release.py --version 1.2.3
+```
+
+The script creates the Chromium and Firefox zip bundles and builds the Safari DMG from the Xcode project.
+
 #### Mozilla
 Development process for the mozilla extension is mostly the same but you have to keep in mind that in `manifest.json` it uses `v2` while all the others use `v3`.
 
