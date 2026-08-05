@@ -85,7 +85,10 @@ def export_browser_zip(browser_name: str, resource_dir: Path, output_name: str, 
 
 
 def run_command(command: list[str], *, cwd: Path | None = None) -> None:
-    subprocess.run(command, cwd=cwd, check=True)
+    try:
+        subprocess.run(command, cwd=cwd, check=True)
+    except subprocess.CalledProcessError as error:
+        raise RuntimeError(f"Command failed: {' '.join(command)}") from error
 
 
 def build_safari_app(version: str, dist_dir: Path) -> Path:
@@ -102,23 +105,30 @@ def build_safari_app(version: str, dist_dir: Path) -> Path:
         try:
             update_manifest_version(manifest_path, version)
 
-            run_command(
-                [
-                    "xcodebuild",
-                    "-project",
-                    str(project_path),
-                    "-scheme",
-                    "Quick UC",
-                    "-configuration",
-                    "Release",
-                    "-derivedDataPath",
-                    str(derived_data_path),
-                    f"MARKETING_VERSION={version}",
-                    "CURRENT_PROJECT_VERSION=1",
-                    "build",
-                ],
-                cwd=project_dir,
-            )
+            try:
+                run_command(
+                    [
+                        "xcodebuild",
+                        "-project",
+                        str(project_path),
+                        "-scheme",
+                        "Quick UC",
+                        "-configuration",
+                        "Release",
+                        "-derivedDataPath",
+                        str(derived_data_path),
+                        f"MARKETING_VERSION={version}",
+                        "CURRENT_PROJECT_VERSION=1",
+                        "build",
+                    ],
+                    cwd=project_dir,
+                )
+            except RuntimeError as error:
+                raise RuntimeError(
+                    "Safari export could not start because xcodebuild failed. "
+                    "This Xcode installation appears to be missing or has mismatched components. "
+                    "Run `xcodebuild -runFirstLaunch` or reinstall/update Xcode, then retry."
+                ) from error
 
             built_app = next(
                 (

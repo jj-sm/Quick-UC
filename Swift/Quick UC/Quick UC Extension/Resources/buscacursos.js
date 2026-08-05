@@ -21,6 +21,39 @@ function fetchClasses() {
     "horarioOTRO": "O"    // Otro
   };
 
+  const extractLabelValue = (text, label) => {
+    const match = text.match(new RegExp(`${label}\\s*:?\\s*([^\\n]+)`, 'i'));
+    return match ? match[1].trim() : '';
+  };
+
+  const parseClassDetails = (spanText) => {
+    const normalized = spanText.replace(/\r/g, '\n');
+    const compact = normalized
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+    const joined = compact.join('\n');
+    const courseCode = extractLabelValue(joined, 'Curso');
+    const curriculum = extractLabelValue(joined, 'Curriculum');
+    const courseName = extractLabelValue(joined, 'Nombre del Curso');
+    const nrc = extractLabelValue(joined, 'NRC');
+    const room = extractLabelValue(joined, 'Sala\(s\)');
+    const hours = extractLabelValue(joined, 'Horas');
+    const campus = extractLabelValue(joined, 'Campus');
+
+    return {
+      curriculum,
+      courseName,
+      courseCode,
+      nrc,
+      room,
+      hours,
+      campus,
+      rawLines: compact
+    };
+  };
+
   for (let row of rows) {
     const cells = row.querySelectorAll("td");
     const time = cells[0]?.innerText.trim();
@@ -32,10 +65,12 @@ function fetchClasses() {
       
       const spans = cell.querySelectorAll("span");
       spans.forEach((span) => {
-        const match = span.textContent.match(/(\d{5})-([A-Z0-9]+)/);
+        const spanText = span.textContent.trim();
+        const match = spanText.match(/(\d{5})-([A-Z0-9]+)/);
         if (match) {
-          const [fullCode, nrc, sigla] = match;
+          const [fullCode, fallbackNrc, fallbackSigla] = match;
           let type = "O"; // Default to "Otro"
+          const parsedDetails = parseClassDetails(spanText);
           
           // Find the type class (color-coded)
           span.classList.forEach(c => {
@@ -43,22 +78,19 @@ function fetchClasses() {
               type = typeAbbreviations[c];
             }
           });
-          
-          // Extract additional info from the span content
-          const spanLines = span.textContent.trim().split('\n');
-          const seccion = spanLines.length > 1 ? spanLines[1].trim() : '';
-          const profesor = spanLines.length > 2 ? spanLines[2].trim() : '';
-          const sala = spanLines.length > 3 ? spanLines[3].trim() : '';
 
           classes.push({
-            nrc,
-            sigla,
+            nrc: parsedDetails.nrc || fallbackNrc,
+            sigla: parsedDetails.courseCode || fallbackSigla,
+            courseName: parsedDetails.courseName,
+            curriculum: parsedDetails.curriculum,
+            room: parsedDetails.room,
+            hours: parsedDetails.hours,
+            campus: parsedDetails.campus,
             type,
             day: days[i - 1],
             time,
-            seccion,
-            profesor,
-            sala
+            rawText: spanText
           });
         }
       });
@@ -80,9 +112,31 @@ function generateICS(classEntries) {
   };
 
   const dtstamp = new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+  const escapeText = (value) => String(value || '').replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
+  const formatTable = (entry) => {
+    const rows = [
+      ['Curriculum', entry.curriculum],
+      ['Nombre del Curso', entry.courseName],
+      ['Curso', entry.sigla],
+      ['NRC', entry.nrc],
+      ['Sala(s)', entry.room],
+      ['Horas', entry.hours],
+      ['Campus', entry.campus],
+      ['Tipo', entry.type],
+      ['Día', entry.day],
+      ['Hora', entry.time]
+    ].filter(([, value]) => value);
+
+    const labelWidth = rows.reduce((max, [label]) => Math.max(max, label.length), 0);
+    const separator = '-'.repeat(labelWidth + 3 + 24);
+    const body = rows.map(([label, value]) => `${label.padEnd(labelWidth)} | ${value}`);
+
+    return ['Detalles del curso', separator, ...body].join('\n');
+  };
   const events = classEntries.map((entry, i) => {
     const start = getDate(entry.day, entry.time);
     const end = new Date(start.getTime() + 70 * 60 * 1000);
+    const description = formatTable(entry);
 
     const format = (d) =>
       `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;
@@ -91,10 +145,11 @@ function generateICS(classEntries) {
 BEGIN:VEVENT
 UID:${entry.nrc}-${i}@quickuc
 DTSTAMP:${dtstamp}
-SUMMARY:[${entry.type}] - ${entry.sigla}
+SUMMARY:[${entry.type}] - ${entry.courseName || entry.sigla}
 DTSTART;TZID=America/Santiago:${format(start)}
 DTEND;TZID=America/Santiago:${format(end)}
-DESCRIPTION:NRC: ${entry.nrc}\\nSigla: ${entry.sigla}\\nSección: ${entry.seccion}\\nProfesor: ${entry.profesor}\\nSala: ${entry.sala}
+DESCRIPTION:${escapeText(description)}
+LOCATION:${escapeText(entry.room)}
 STATUS:CONFIRMED
 END:VEVENT`;
   });
