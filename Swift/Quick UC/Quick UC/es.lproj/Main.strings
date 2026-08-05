@@ -1,0 +1,36 @@
+
+/* Class = "NSMenuItem"; title = "Quick UC"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Quick UC";
+
+/* Class = "NSMenuItem"; title = "Quit Quick UC"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Quit Quick UC";
+
+/* Class = "NSMenuItem"; title = "About Quick UC"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "About Quick UC";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Quick UC Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Quick UC Help";
+
+/* Class = "NSWindow"; title = "Quick UC"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "Quick UC";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Hide Quick UC"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Hide Quick UC";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Hide Others";
+
+/* Class = "NSMenu"; title = "Quick UC"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Quick UC";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Help";

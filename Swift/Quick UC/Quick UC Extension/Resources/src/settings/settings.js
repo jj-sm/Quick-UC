@@ -3,56 +3,23 @@ import { links } from '../buttons.js';
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("settings-container");
   const saveButton = document.getElementById("save-button");
-  const languageToggle = document.getElementById("language-toggle");
 
   // Load saved preferences from localStorage
   const savedPreferences = JSON.parse(localStorage.getItem("selectedLinks") || "[]");
 
-  // Load saved language from chrome.storage.local
-  chrome.storage.local.get("language", (result) => {
-    const savedLanguage = result.language || "es"; // Default to Spanish
-    setLanguage(savedLanguage, false); // Initialize without reloading
-  });
+  // Set placeholders dynamically for input fields
+  document.getElementById("username").placeholder = chrome.i18n.getMessage("cas_username_placeholder");
+  document.getElementById("password").placeholder = chrome.i18n.getMessage("cas_password_placeholder");
+  document.getElementById("labmat-username").placeholder = chrome.i18n.getMessage("labmat_username_placeholder");
+  document.getElementById("labmat-password").placeholder = chrome.i18n.getMessage("labmat_password_placeholder");
 
-  // Event listener for language toggle
-  languageToggle.addEventListener("click", () => {
-    const currentLanguage = languageToggle.textContent;
-    const newLanguage = currentLanguage === "ES" ? "en" : "es";
-    setLanguage(newLanguage, true); // Change language and reload
-  });
-
-  function setLanguage(language, shouldReload) {
-    // Save language to chrome.storage.local
-    chrome.storage.local.set({ language }, () => {
-      console.log(`Language set to: ${language}`);
-    });
-
-    // Update the toggle button text
-    languageToggle.textContent = language.toUpperCase();
-
-    // Reload the page only if necessary
-    if (shouldReload) {
-      location.reload();
-    } else {
-      applyTranslations(); // Apply translations without reloading
+  // Automatically translate elements with data-i18n attributes
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const message = chrome.i18n.getMessage(el.getAttribute("data-i18n"));
+    if (message) {
+      el.textContent = message;
     }
-  }
-
-  function applyTranslations() {
-    // Replace placeholders with localized messages
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const message = chrome.i18n.getMessage(el.getAttribute("data-i18n"));
-      if (message) {
-        el.textContent = message;
-      }
-    });
-
-    // Set placeholders dynamically for input fields
-    document.getElementById("username").placeholder = chrome.i18n.getMessage("cas_username_placeholder");
-    document.getElementById("password").placeholder = chrome.i18n.getMessage("cas_password_placeholder");
-    document.getElementById("labmat-username").placeholder = chrome.i18n.getMessage("labmat_username_placeholder");
-    document.getElementById("labmat-password").placeholder = chrome.i18n.getMessage("labmat_password_placeholder");
-  }
+  });
 
   // Dynamically populate buttons from links.js
   links.forEach((link) => {
