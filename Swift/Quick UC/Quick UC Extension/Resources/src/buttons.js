@@ -5,7 +5,7 @@
 //  Created by Juan José Sánchez Medina on 27/04/25.
 //
 
-export const links = [
+const links = [
     {
         url: "https://portal.uc.cl/",
         imgSrc: "images/buttons/uc-logo.svg",
@@ -72,15 +72,21 @@ export const links = [
     }
 ];
 
-export const settingsButton = {
+const settingsButton = {
     url: "settings.html",
     imgSrc: "images/misc/settings.svg",
     imgAlt: "Settings Icon",
     label: "Settings"
 };
 
-export const calendarButton = {
+const calendarButton = {
     imgSrc: "images/buttons/calendar-export.svg",
     imgAlt: "Calendar Icon",
     label: "Calendario"
+};
+
+window.QuickUCButtons = {
+    links,
+    settingsButton,
+    calendarButton
 };

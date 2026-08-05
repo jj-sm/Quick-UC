@@ -1,8 +1,7 @@
-import { links } from '../buttons.js';
-
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("settings-container");
   const saveButton = document.getElementById("save-button");
+  const { links } = window.QuickUCButtons;
 
   // Load from localStorage
   const savedPreferences = JSON.parse(localStorage.getItem("selectedLinks") || "[]");

@@ -1,7 +1,6 @@
-import { links, settingsButton, calendarButton } from './buttons.js';
-
 document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById('button-container');
+  const { links, settingsButton, calendarButton } = window.QuickUCButtons;
 
   // Get current tab
   const tabs = await browser.tabs.query({ active: true, currentWindow: true });
